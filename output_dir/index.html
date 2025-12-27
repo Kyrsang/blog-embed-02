@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="./favicon.ico" />
+    <!-- Preload is necessary because we show these images when we disconnect from the server,
+    but at that point we cannot load these images from the server -->
+    <link rel="preload" href="./assets/gradient-yHQUC_QB.png" as="image" />
+    <link rel="preload" href="./assets/noise-60BoTA8O.png" as="image" />
+    <!-- Preload the fonts -->
+    <link rel="preload" href="./assets/Lora-VariableFont_wght-B2ootaw-.ttf" as="font" crossorigin="anonymous" />
+    <link rel="preload" href="./assets/PTSans-Regular-CxL0S8W7.ttf" as="font" crossorigin="anonymous" />
+    <link rel="preload" href="./assets/PTSans-Bold-D9fedIX3.ttf" as="font" crossorigin="anonymous" />
+    <link rel="preload" href="./assets/FiraMono-Regular-BTCkDNvf.ttf" as="font" crossorigin="anonymous" />
+    <link rel="preload" href="./assets/FiraMono-Medium-DU3aDxX5.ttf" as="font" crossorigin="anonymous" />
+    <link rel="preload" href="./assets/FiraMono-Bold-CLVRCuM9.ttf" as="font" crossorigin="anonymous" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="a marimo app" />
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+    <link rel="manifest" href="./manifest.json" />
+
+    <script data-marimo="true">
+      function __resizeIframe(obj) {
+        var scrollbarHeight = 20; // Max between windows, mac, and linux
+
+        function setHeight() {
+          var element = obj.contentWindow.document.documentElement;
+          // If there is no vertical scrollbar, we don't need to resize the iframe
+          if (element.scrollHeight === element.clientHeight) {
+            return;
+          }
+
+          // Create a new height that includes the scrollbar height if it's visible
+          var hasHorizontalScrollbar = element.scrollWidth > element.clientWidth;
+          var newHeight = element.scrollHeight + (hasHorizontalScrollbar ? scrollbarHeight : 0);
+
+          // Only update the height if it's different from the current height
+          if (obj.style.height !== `${newHeight}px`) {
+            obj.style.height = `${newHeight}px`;
+          }
+        }
+
+        // Resize the iframe to the height of the content and bottom scrollbar height
+        setHeight();
+
+        // Resize the iframe when the content changes
+        const resizeObserver = new ResizeObserver((entries) => {
+          setHeight();
+        });
+        resizeObserver.observe(obj.contentWindow.document.body);
+      }
+    </script>
+    <marimo-filename hidden>notebook.py</marimo-filename>
+    <marimo-mode data-mode='edit' hidden></marimo-mode>
+    <marimo-version data-version='0.12.8' hidden></marimo-version>
+    <marimo-user-config data-config='{"completion": {"activate_on_typing": true, "copilot": false}, "display": {"theme": "light", "code_editor_font_size": 14, "cell_output": "above", "default_width": "medium", "dataframes": "rich"}, "formatting": {"line_length": 79}, "keymap": {"preset": "default", "overrides": {}}, "runtime": {"auto_instantiate": true, "auto_reload": "off", "reactive_tests": true, "on_cell_change": "autorun", "watcher_on_save": "lazy", "output_max_bytes": 8000000, "std_stream_max_bytes": 1000000}, "save": {"autosave": "off", "autosave_delay": 1000, "format_on_save": false}, "package_management": {"manager": "pip"}, "server": {"browser": "default", "follow_symlink": false}, "language_servers": {"pylsp": {"enabled": true, "enable_mypy": true, "enable_ruff": true, "enable_flake8": false, "enable_pydocstyle": false, "enable_pylint": false, "enable_pyflakes": false}}, "snippets": {"custom_paths": [], "include_default_snippets": true}}' data-overrides='{}' hidden></marimo-user-config>
+    <marimo-app-config data-config='{"width": "medium", "layout_file": "data:application/json;base64,ewogICJ0eXBlIjogImdyaWQiLAogICJkYXRhIjogewogICAgImNvbHVtbnMiOiAyNCwKICAgICJyb3dIZWlnaHQiOiAyMCwKICAgICJtYXhXaWR0aCI6IDE0MDAsCiAgICAiYm9yZGVyZWQiOiB0cnVlLAogICAgImNlbGxzIjogWwogICAgICB7CiAgICAgICAgInBvc2l0aW9uIjogbnVsbAogICAgICB9LAogICAgICB7CiAgICAgICAgInBvc2l0aW9uIjogbnVsbAogICAgICB9LAogICAgICB7CiAgICAgICAgInBvc2l0aW9uIjogWwogICAgICAgICAgMSwKICAgICAgICAgIDYsCiAgICAgICAgICAyMiwKICAgICAgICAgIDI0CiAgICAgICAgXQogICAgICB9CiAgICBdCiAgfQp9", "sql_output": "auto"}' hidden></marimo-app-config>
+    <marimo-server-token data-token='123' hidden></marimo-server-token>
+    <title>demo2</title>
+    <script type="module" crossorigin src="./assets/index-CGFEuydC.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-C9FDJL8i.css">
+  <marimo-wasm hidden=""></marimo-wasm>
+    <script>
+        if (window.location.protocol === 'file:') {
+            alert('Warning: This file must be served by an HTTP server to function correctly.');
+        }
+    </script>
+    
+    <style>
+        #save-button {
+            display: none !important;
+        }
+        #filename-input {
+            display: none !important;
+        }
+    </style>
+    <marimo-code hidden="" data-show-code="false">import%20marimo%0A%0A__generated_with%20%3D%20%220.12.8%22%0Aapp%20%3D%20marimo.App(%0A%20%20%20%20width%3D%22medium%22%2C%0A%20%20%20%20layout_file%3D%22data%3Aapplication%2Fjson%3Bbase64%2CewogICJ0eXBlIjogImdyaWQiLAogICJkYXRhIjogewogICAgImNvbHVtbnMiOiAyNCwKICAgICJyb3dIZWlnaHQiOiAyMCwKICAgICJtYXhXaWR0aCI6IDE0MDAsCiAgICAiYm9yZGVyZWQiOiB0cnVlLAogICAgImNlbGxzIjogWwogICAgICB7CiAgICAgICAgInBvc2l0aW9uIjogbnVsbAogICAgICB9LAogICAgICB7CiAgICAgICAgInBvc2l0aW9uIjogbnVsbAogICAgICB9LAogICAgICB7CiAgICAgICAgInBvc2l0aW9uIjogWwogICAgICAgICAgMSwKICAgICAgICAgIDYsCiAgICAgICAgICAyMiwKICAgICAgICAgIDI0CiAgICAgICAgXQogICAgICB9CiAgICBdCiAgfQp9%22%2C%0A)%0A%0A%0A%40app.cell%0Adef%20_()%3A%0A%20%20%20%20import%20marimo%20as%20mo%0A%20%20%20%20return%20(mo%2C)%0A%0A%0A%40app.cell%0Adef%20_(mo)%3A%0A%20%20%20%20import%20pandas%20as%20pd%0A%20%20%20%20from%20functools%20import%20wraps%0A%0A%20%20%20%20def%20expect_or_drop(condition_func)%3A%0A%20%20%20%20%20%20%20%20%22%22%22Drop%20rows%20failing%20a%20condition%20in%20a%20Pandas%20DataFrame.%22%22%22%0A%20%20%20%20%20%20%20%20def%20decorator(func)%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20%40wraps(func)%0A%20%20%20%20%20%20%20%20%20%20%20%20def%20wrapper(*args%2C%20**kwargs)%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20df%20%3D%20func(*args%2C%20**kwargs)%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20original_len%20%3D%20len(df)%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20df%20%3D%20df%5Bcondition_func(df)%5D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20print(f%22Dropped%20%7Boriginal_len%20-%20len(df)%7D%20rows%22)%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20return%20df%0A%20%20%20%20%20%20%20%20%20%20%20%20return%20wrapper%0A%20%20%20%20%20%20%20%20return%20decorator%0A%0A%20%20%20%20def%20temporary_view(name%3DNone)%3A%0A%20%20%20%20%20%20%20%20%22%22%22Label%20DataFrames%20as%20a%20temporary%20view%20(conceptual).%22%22%22%0A%20%20%20%20%20%20%20%20def%20decorator(func)%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20%40wraps(func)%0A%20%20%20%20%20%20%20%20%20%20%20%20def%20wrapper(*args%2C%20**kwargs)%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20df%20%3D%20func(*args%2C%20**kwargs)%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20view_name%20%3D%20name%20or%20func.__name__%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20print(f%22Temporary%20view%20'%7Bview_name%7D'%20created%22)%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20return%20df%0A%20%20%20%20%20%20%20%20%20%20%20%20return%20wrapper%0A%20%20%20%20%20%20%20%20return%20decorator%0A%0A%20%20%20%20GTFS_URLS%20%3D%20%7B%0A%20%20%20%20%20%20%20%20%22stops%22%3A%20%22https%3A%2F%2Fraw.githubusercontent.com%2FCynicDog%2Fmarimo-canvas%2Fmain%2Fdata%2Fnyc-subway%2Fgtfs_supplemented%2Fstops.txt%22%2C%0A%20%20%20%20%7D%0A%0A%20%20%20%20%40mo.cache%0A%20%20%20%20def%20load_gtfs_pandas()%3A%0A%20%20%20%20%20%20%20%20%22%22%22Load%20GTFS%20snapshot%20from%20URLs%20for%20EDA.%22%22%22%0A%20%20%20%20%20%20%20%20stops%20%3D%20pd.read_csv(%0A%20%20%20%20%20%20%20%20%20%20%20%20GTFS_URLS%5B%22stops%22%5D%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20usecols%3D%5B%22stop_id%22%2C%20%22stop_name%22%2C%20%22stop_lat%22%2C%20%22stop_lon%22%2C%20%22parent_station%22%5D%0A%20%20%20%20%20%20%20%20)%0A%0A%20%20%20%20%20%20%20%20print(%22GTFS%20data%20loaded%20successfully%22)%0A%20%20%20%20%20%20%20%20return%20stops%0A%20%20%20%20return%20(%0A%20%20%20%20%20%20%20%20GTFS_URLS%2C%0A%20%20%20%20%20%20%20%20expect_or_drop%2C%0A%20%20%20%20%20%20%20%20load_gtfs_pandas%2C%0A%20%20%20%20%20%20%20%20pd%2C%0A%20%20%20%20%20%20%20%20temporary_view%2C%0A%20%20%20%20%20%20%20%20wraps%2C%0A%20%20%20%20)%0A%0A%0A%40app.cell%0Adef%20_(expect_or_drop%2C%20load_gtfs_pandas%2C%20mo)%3A%0A%20%20%20%20%23%20Apply%20a%20functional%20filter%20to%20only%20keep%20stops%20with%20a%20parent_station%0A%20%20%20%20%40expect_or_drop(lambda%20df%3A%20df%5B%22parent_station%22%5D.notna())%0A%20%20%20%20def%20filtered_stops()%3A%0A%20%20%20%20%20%20%20%20return%20load_gtfs_pandas()%0A%0A%20%20%20%20%23%20Call%20the%20function%20to%20get%20the%20filtered%20DataFrame%0A%20%20%20%20filtered_stops_df%20%3D%20filtered_stops()%0A%0A%20%20%20%20%23%20Compose%20Marimo%20UI%20section%0A%20%20%20%20mo.vstack(%5B%0A%20%20%20%20%20%20%20%20mo.md(%22%23%23%20Filtered%20Stops%20Table%22)%2C%0A%20%20%20%20%20%20%20%20mo.ui.table(filtered_stops_df)%2C%20%0A%20%20%20%20%5D)%0A%20%20%20%20return%20filtered_stops%2C%20filtered_stops_df%0A%0A%0Aif%20__name__%20%3D%3D%20%22__main__%22%3A%0A%20%20%20%20app.run()%0A</marimo-code></head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
